@@ -6,7 +6,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4">CONTACT <span class="text-red">SPIRITUAL IREKOBO</span></h1>
+                <h1 class="display-4 fw-bold mb-4">CONTACT <span class="text-red"><?php echo $namec ?></span></h1>
                 <p class="lead">Feel free to reach out for spiritual guidance and solutions</p>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <p class="mb-4">If you have a problem and want a quick solution, and you're serious about solving
                         your problem and living the life you want, feel free to contact me via email or phone.</p>
                     <div class="contact-info mb-4">
-                        <div class="d-flex mb-3">
+                        <!--<div class="d-flex mb-3">
                             <div class="icon-box me-3">
                                 <i class="fas fa-map-marker-alt text-red fs-4"></i>
                             </div>
@@ -31,14 +31,14 @@
                                 <h5 class="mb-0">Address</h5>
                                 <p class="mb-0"><?php echo $addr ?></p>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="d-flex mb-3">
                             <div class="icon-box me-3">
-                                <i class="fas fa-phone text-red fs-4"></i>
+                                <i class="fab fa-whatsapp text-success fs-4"></i>
                             </div>
                             <div>
-                                <h5 class="mb-0">Phone</h5>
-                                <p class="mb-0"><?php echo $phone ?></p>
+                                <h5 class="mb-0">Whatsapp</h5>
+                                <p class="mb-0">+<?php echo $phone ?></p>
                             </div>
                         </div>
                         <div class="d-flex mb-3">
@@ -103,30 +103,30 @@
             </div>
 
             <script>
-            document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
+                document.getElementById('whatsappContactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
 
-                // Get form values
-                const name = encodeURIComponent(this.name.value);
-                const email = encodeURIComponent(this.email.value);
-                const phone = encodeURIComponent(this.phone.value);
-                const service = encodeURIComponent(this.service.value);
-                const message = encodeURIComponent(this.message.value);
+                    // Get form values
+                    const name = encodeURIComponent(this.name.value);
+                    const email = encodeURIComponent(this.email.value);
+                    const phone = encodeURIComponent(this.phone.value);
+                    const service = encodeURIComponent(this.service.value);
+                    const message = encodeURIComponent(this.message.value);
 
-                // Format the WhatsApp message with proper spacing
-                const whatsappMessage = `*NEW CLIENT MESSAGE*%0A%0A
+                    // Format the WhatsApp message with proper spacing
+                    const whatsappMessage = `*NEW CLIENT MESSAGE*%0A%0A
 *Name:* ${name}%0A
 *Email:* ${email}%0A
 *Phone:* ${phone || 'Not provided'}%0A%0A
 *Service Needed:* ${service}%0A%0A
 *Message:*%0A${message}`;
 
-                // Open WhatsApp with properly formatted message
-                window.open(`https://wa.me/<?php echo $phone; ?>?text=${whatsappMessage}`, '_blank');
+                    // Open WhatsApp with properly formatted message
+                    window.open(`https://wa.me/<?php echo $phone; ?>?text=${whatsappMessage}`, '_blank');
 
-                // Optional: Reset form after submission
-                this.reset();
-            });
+                    // Optional: Reset form after submission
+                    this.reset();
+                });
             </script>
         </div>
     </div>

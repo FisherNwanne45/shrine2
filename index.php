@@ -6,7 +6,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold mb-4">WELCOME TO THE GREAT <span class="text-red">SPIRITUAL IREKOBO</span>
+                <h1 class="display-4 fw-bold mb-4">WELCOME TO THE GREAT <span
+                        class="text-red"><?php echo $namec ?></span>
                     HOUSE OF SOLUTIONS</h1>
                 <p class="lead mb-4">For 27 years, I've helped thousands find solutions to their deepest problems
                     through ancient spiritual wisdom and divine power.</p>
@@ -26,7 +27,7 @@
             </div>
 
             <div class="col-lg-6">
-                <img src="assets/images/irekobo-main.gif" alt="Spiritual Irekobo" class="img-fluid rounded shadow-lg">
+                <img src="assets/images/irekobo-main.gif" alt="<?php echo $name ?>" class="img-fluid rounded shadow-lg">
             </div>
         </div>
     </div>
@@ -215,7 +216,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="about.php" class="btn btn-outline-light btn-lg px-5">View All Services</a>
+            <a href="services.php" class="btn btn-outline-light btn-lg px-5">View All Services</a>
         </div>
     </div>
 </section>
@@ -317,7 +318,7 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                         </div>
-                        <p>"After Spiritual Irekobo's work, my husband came back with so much love. He was gone for
+                        <p>"After <?php echo $name ?>'s work, my husband came back with so much love. He was gone for
                             months but returned within 48 hours of the ritual. Our marriage is now stronger than ever."
                         </p>
                     </div>
@@ -338,7 +339,8 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                         </div>
-                        <p>"My husband divorced me but after Spiritual Irekobo's intervention, he returned home begging
+                        <p>"My husband divorced me but after <?php echo $name ?>'s intervention, he returned home
+                            begging
                             for forgiveness. We've been living peacefully ever since."</p>
                     </div>
                 </div>
@@ -378,7 +380,7 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                         </div>
-                        <p>"My husband left me for another woman but returned after Spiritual Irekobo's intervention.
+                        <p>"My husband left me for another woman but returned after <?php echo $name ?>'s intervention.
                             He's now more loving and committed than before."</p>
                     </div>
                 </div>
@@ -399,7 +401,7 @@
                             <i class="fas fa-star text-warning"></i>
                         </div>
                         <p>"After 6 years of marriage without a child, the pregnancy spell worked miraculously. I'm now
-                            a proud mother thanks to Spiritual Irekobo."</p>
+                            a proud mother thanks to <?php echo $name ?>."</p>
                     </div>
                 </div>
             </div>
@@ -418,7 +420,7 @@
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                         </div>
-                        <p>"My wife filed for divorce but returned after Spiritual Irekobo's work. Our family is now
+                        <p>"My wife filed for divorce but returned after <?php echo $name ?>'s work. Our family is now
                             complete and happier than ever before."</p>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4">ABOUT <span class="text-red">SPIRITUAL IREKOBO</span></h1>
+                <h1 class="display-4 fw-bold mb-4">ABOUT <span class="text-red"><?php echo $namec ?></span></h1>
                 <p class="lead">Providing spiritual solutions for over 27 years</p>
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <h2 class="display-5 fw-bold mb-4">MY <span class="text-red">JOURNEY</span></h2>
-                <p>Allow me to introduce myself my name is Spiritual Irekobo and I'm a natural gifted man who has be
+                <p>Allow me to introduce myself my name is <?php echo $name ?> and I'm a natural gifted man who has be
                     gifted and blessed with natural powers to help restore broken relationships and marriages.</p>
                 <p>I do all kinds of spiritual works for the past 27 years now I have helped a lot of people who have
                     had serious relationship problems and different situations with my nature powers. Never give up,

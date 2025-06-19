@@ -67,3 +67,88 @@ scrollToTopBtn.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
+
+// Check for existing translation cookie on page load
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if we have a saved language preference
+  const langCookie = document.cookie.match(/googtrans=([^;]+)/);
+  if (langCookie) {
+    const langCode = langCookie[1].split("/").pop();
+    document.getElementById("customLanguageSelect").value = langCode;
+    initializeTranslation(langCode);
+  }
+});
+
+// Initialize translation without showing Google's UI
+function initializeTranslation(language) {
+  // Only load if not already loaded
+  if (!window.google || !google.translate) {
+    const script = document.createElement("script");
+    script.src = `//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=${language}`;
+    document.head.appendChild(script);
+  } else {
+    googleTranslateElementInit();
+  }
+}
+
+// Handle language selection
+document
+  .getElementById("customLanguageSelect")
+  .addEventListener("change", function () {
+    const language = this.value;
+
+    // Set cookie for 1 year
+    document.cookie = `googtrans=/en/${language}; expires=${new Date(
+      Date.now() + 31536000000
+    ).toUTCString()}; path=/`;
+
+    // Initialize translation
+    initializeTranslation(language);
+
+    // Soft reload to apply translation
+    window.location.reload();
+  });
+
+// Google Translate initialization
+function googleTranslateElementInit() {
+  // Only proceed if we have a translation cookie
+  if (!document.cookie.includes("googtrans=")) return;
+
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: "en",
+      includedLanguages: "en,fr,es,de,pt,it,ru,ar,zh-CN,ja",
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false,
+    },
+    "google_translate_element"
+  );
+
+  // Immediately hide all Google elements
+  hideGoogleElements();
+}
+
+// Hide all Google Translate UI elements
+function hideGoogleElements() {
+  const style = document.createElement("style");
+  style.innerHTML = `
+      .goog-te-banner-frame, 
+      .skiptranslate, 
+      .goog-te-gadget, 
+      .goog-te-menu-frame, 
+      .goog-te-ftab-frame,
+      .goog-te-combo,
+      .goog-te-spinner-pos,
+      #goog-gt-tt {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          width: 0 !important;
+      }
+      body { 
+          top: 0 !important; 
+          position: static !important;
+      }
+  `;
+  document.head.appendChild(style);
+}

@@ -1,6 +1,7 @@
 <?php
 
 $name = 'Spiritual Irekobo';
+$namec = 'SPIRITUAL IREKOBO';
 
 $logoname = 'SPIRITUAL <span class="text-red">IREKOBO</span>';
 
@@ -14,8 +15,8 @@ $phone2 = '+44 1632960345';
 $url = 'http://localhost/hospital_fin';
 $urlh = 'localhost/hospital_fin';
 
-$email = 'healingspiritual171@gmail.com';
-$mail = 'healingspiritual171@gmail.com';
+$email = 'spiritualirekobo@gmail.com';
+$mail = 'spiritualirekobo@gmail.com';
 
 
 $tawk = '<a href="https://wa.me/2347017587828?text=Hello Spiritual Irekobo. I want to make an enquiry" class="float" target="_blank">
@@ -29,7 +30,7 @@ $tawk = '<a href="https://wa.me/2347017587828?text=Hello Spiritual Irekobo. I wa
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
             background-color: #25d366;
             color: #FFF;
@@ -78,7 +79,7 @@ $tawk = '<a href="https://wa.me/2347017587828?text=Hello Spiritual Irekobo. I wa
             color: #333;
             padding: 5px 10px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
             opacity: 1;

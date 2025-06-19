@@ -7,6 +7,17 @@
         <title><?php echo $name ?> - <?php echo basename($_SERVER['PHP_SELF'], '.php') ?></title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Favicon Meta Tags -->
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <link rel="apple-touch-icon" href="assets/images/favicon.png">
+        <meta name="msapplication-TileImage" content="assets/images/favicon.png">
+
+        <!-- Open Graph Meta Tags (for social media sharing) -->
+        <meta property="og:image" content="assets/images/favicon.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="<?php echo $name ?> - Spiritual Solutions">
+        <meta property="og:type" content="website">
         <link
             href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
             rel="stylesheet">
@@ -39,6 +50,7 @@
                                     <!-- Add more languages as needed -->
                                 </select>
                             </div>
+                            <div id="google_translate_element" style="display:none"></div>
                         </li>
                     </ul>
                 </div>
