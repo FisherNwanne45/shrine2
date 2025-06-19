@@ -1,0 +1,476 @@
+:root {
+  --red: #8b0000;
+  --dark: #121212;
+  --dark2: #1a1a1a;
+  --dark3: #222222;
+  --text-light: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+
+.text-red {
+  color: var(--red) !important;
+}
+
+/* Add to your CSS */
+@keyframes smoke {
+  0% {
+    text-shadow: 0 0 0 transparent, 0 0 10px rgba(255, 100, 0, 0.1),
+      0 0 20px rgba(255, 100, 0, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(228, 221, 217, 0.3),
+      0 0 15px rgba(255, 100, 0, 0.2), 0 0 25px rgba(255, 100, 0, 0.1),
+      0 0 30px rgba(255, 100, 0, 0.05);
+  }
+  100% {
+    text-shadow: 0 0 0 transparent, 0 0 10px rgba(255, 100, 0, 0.1),
+      0 0 20px rgba(255, 100, 0, 0.1);
+  }
+}
+
+.text-reds {
+  color: var(--red) !important;
+  position: relative;
+  animation: smoke 4s infinite ease-in-out;
+}
+
+.text-reds::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100%;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(236, 210, 193, 0.5) 0%,
+    rgba(255, 100, 0, 0) 70%
+  );
+  transform: translateX(-50%);
+  filter: blur(5px);
+  animation: smoke-rise 4s infinite ease-in-out;
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.bg-red {
+  background-color: var(--red) !important;
+}
+
+.bg-dark2 {
+  background-color: var(--dark2);
+}
+
+.bg-dark3 {
+  background-color: var(--dark3);
+}
+
+.btn-red {
+  background-color: var(--red);
+  color: white;
+  border: none;
+}
+
+.btn-red:hover {
+  background-color: #6d0000;
+  color: white;
+}
+
+/* Layout Fixes */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 80px 0;
+}
+
+/* Service Cards */
+.service-card {
+  transition: transform 0.3s ease;
+  background-color: var(--dark2);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.service-card .card-body {
+  padding: 30px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background-color: var(--dark2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.testimonial-img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    display: flex;
+    align-items: center;
+  }
+  .testimonial-img {
+    margin: 0 20px 0 0;
+    flex: 0 0 150px;
+  }
+}
+
+/* Pricing Cards */
+.pricing-card {
+  background-color: var(--dark2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.pricing-card .card-header {
+  padding: 20px;
+  border-bottom: none;
+}
+
+.pricing-card .card-body {
+  padding: 30px;
+}
+
+/* About Section Enhancements */
+.about-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .hero-section .display-4 {
+    font-size: 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-card {
+    text-align: center;
+  }
+
+  .service-card,
+  .pricing-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Ensure text is readable */
+.card,
+.accordion-item {
+  color: var(--text-light);
+}
+
+.accordion-button {
+  color: white;
+  background-color: var(--dark2);
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: var(--red);
+}
+
+.accordion-body {
+  background-color: var(--dark3);
+}
+
+/* Services Page Specific Styles */
+.services-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/services-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--dark3);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-card .card-body {
+  padding: 25px;
+}
+
+.service-card .card-footer {
+  background-color: var(--dark3);
+}
+
+.step-number span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .service-card {
+    margin-bottom: 20px;
+  }
+
+  .services-hero .display-4 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Page Background Styles */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/irekobo-main.gif") no-repeat;
+  background-size: cover;
+}
+
+.faq-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/irekobo-main.gif") no-repeat;
+  background-size: cover;
+}
+
+.testimonials-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/irekobo-main.gif") no-repeat;
+  background-size: cover;
+}
+
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/irekobo-main.gif") no-repeat;
+  background-size: cover;
+}
+
+.services-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/irekobo-main.gif") no-repeat;
+  background-size: cover;
+}
+
+/* Hero Section Common Styles */
+.about-hero,
+.faq-hero,
+.testimonials-hero,
+.services-hero,
+.contact-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 100px 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top:hover {
+  background-color: #6d0000;
+  transform: translateY(-3px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Contact Form Text Visibility Fix */
+.form-control,
+.form-select,
+textarea {
+  color: white !important; /* Ensures text is white */
+  background-color: var(--dark3) !important; /* Dark background */
+  border: 1px solid #444 !important; /* Slightly lighter border */
+}
+
+/* Change placeholder text color */
+.form-control::placeholder {
+  color: #aaa !important;
+  opacity: 1; /* Firefox fix */
+}
+
+/* Focus state styling */
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25) !important;
+  background-color: var(--dark3) !important;
+  color: white !important;
+}
+
+/* Select dropdown options */
+.form-select option {
+  background-color: var(--dark2);
+  color: white;
+}
+
+/* For browsers that autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--dark3) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.language-selector {
+  margin-left: 15px;
+  min-width: 120px;
+}
+
+.language-selector select {
+  background-color: #111 !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+  border-radius: 25px !important;
+  padding: 10px 35px 10px 15px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  height: 42px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.language-selector select:hover {
+  border-color: #555 !important;
+  background-color: #1a1a1a !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 991px) {
+  .language-selector {
+    width: 100%;
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .language-selector select {
+    width: 100% !important;
+  }
+}
+/* Completely nuke all Google Translate elements */
+.goog-te-banner-frame,
+.skiptranslate,
+.goog-te-gadget,
+.goog-te-menu-value,
+.goog-te-menu-frame,
+.goog-te-ftab-frame,
+.goog-te-combo,
+.goog-te-spinner-pos,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Prevent body shift when Google tries to add space */
+body {
+  top: 0 !important;
+  position: static !important;
+}
